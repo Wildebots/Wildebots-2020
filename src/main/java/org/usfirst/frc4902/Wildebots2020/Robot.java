@@ -124,9 +124,9 @@ public class Robot extends TimedRobot {
     public void teleopPeriodic() {
         
         // sensor returns a value from 0-4095 that is scaled to inches
-        double currentDistance = m_ultrasonic.getValue() * kValueToInches;
+        double distanceToNearestObject = m_ultrasonic.getValue() * kValueToInches;
 
-        System.out.println(currentDistance);
+        System.out.println(distanceToNearestObject);
         
         Scheduler.getInstance().run();
     }
