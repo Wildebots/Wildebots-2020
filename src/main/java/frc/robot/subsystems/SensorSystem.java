@@ -10,7 +10,7 @@ import com.revrobotics.ColorSensorV3;
 import com.revrobotics.ColorMatchResult;
 import com.revrobotics.ColorMatch;
 
-public class VisionSystem extends Subsystem {
+public class SensorSystem extends Subsystem {
 
     private final ColorSensorV3 sensor;
     private final ColorMatch matcher;
@@ -26,7 +26,7 @@ public class VisionSystem extends Subsystem {
 
     private Color detect;
 
-    public VisionSystem() {
+    public SensorSystem() {
         sensor = new ColorSensorV3(Robot.i2cport);
         matcher = new ColorMatch();
         matcher.addColorMatch(Blue);
