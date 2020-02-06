@@ -12,10 +12,10 @@ import com.revrobotics.ColorMatch;
 
 public class SensorSystem extends Subsystem {
 
-    private final ColorSensorV3 sensor;
+    private final ColorSensorV3 cSensor;// c
     private final ColorMatch matcher;
 
-    private final AnalogInput ultrasonic = new AnalogInput(Robot.UltrasonicPort);
+    private final AnalogInput ultrasonic = new AnalogInput(Robot.UltrasonicPort); //
 
     private final Color Blue = ColorMatch.makeColor(0, 1, 1);
     private final Color Green = ColorMatch.makeColor(0, 1, 0);
@@ -27,7 +27,7 @@ public class SensorSystem extends Subsystem {
     private Color detect;
 
     public SensorSystem() {
-        sensor = new ColorSensorV3(Robot.i2cport);
+        cSensor = new ColorSensorV3(Robot.i2cport);
         matcher = new ColorMatch();
         matcher.addColorMatch(Blue);
         matcher.addColorMatch(Green);
@@ -64,7 +64,7 @@ public class SensorSystem extends Subsystem {
     }
 
     public void detectColor() {
-        Color detected = sensor.getColor();
+        Color detected = cSensor.getColor();
         ColorMatchResult match = matcher.matchClosestColor(detected);
         detect = match.color;
         String color = colorString(match);
