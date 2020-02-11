@@ -127,7 +127,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void teleopPeriodic() {
-        sensors.getDistance();
+        sensors.detectColor();
         Scheduler.getInstance().run();
     }
 }

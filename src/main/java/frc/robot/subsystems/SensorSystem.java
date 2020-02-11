@@ -68,7 +68,7 @@ public class SensorSystem extends Subsystem {
         ColorMatchResult match = matcher.matchClosestColor(detected);
         detect = match.color;
         String color = colorString(match);
-        SmartDashboard.putString("Color", color);
+        System.out.println(color);
     }
 
     public void getDistance() {
