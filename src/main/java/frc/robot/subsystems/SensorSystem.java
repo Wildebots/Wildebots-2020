@@ -17,10 +17,10 @@ public class SensorSystem extends Subsystem {
 
     private final AnalogInput ultrasonic = new AnalogInput(Robot.UltrasonicPort); //
 
-    private final Color Blue = ColorMatch.makeColor(0, 1, 1);
-    private final Color Green = ColorMatch.makeColor(0, 1, 0);
-    private final Color Red = ColorMatch.makeColor(1, 0, 0);
-    private final Color Yellow = ColorMatch.makeColor(1, 1, 0);
+    private final Color Blue = ColorMatch.makeColor(0.143, 0.427, 0.429);
+    private final Color Green = ColorMatch.makeColor(0.197, 0.561, 0.240);
+    private final Color Red = ColorMatch.makeColor(0.561, 0.232, 0.114);
+    private final Color Yellow = ColorMatch.makeColor(0.361, 0.524, 0.113);
 
     private static final double ValueToInches = 0.125;
 
@@ -42,25 +42,22 @@ public class SensorSystem extends Subsystem {
     }
 
     public String colorString(ColorMatchResult cmr) {
-        if (cmr.color == Blue) {
+        if (cmr.color == this.Blue) {
             return "Blue";
         }
 
-        else if (cmr.color == Green) {
+        else if (cmr.color == this.Green) {
             return "Green";
         }
 
-        else if (cmr.color == Red) {
+        else if (cmr.color == this.Red) {
             return "Red";
         }
         
-        else if (cmr.color == Yellow) {
+        else if (cmr.color == this.Yellow) {
             return "Yellow";
         }
 
-        else {
-            return "None";
-        }
     }
 
     public void detectColor() {
