@@ -58,6 +58,9 @@ public class SensorSystem extends Subsystem {
             return "Yellow";
         }
 
+        else {
+            return "None";
+        }
     }
 
     public void detectColor() {
