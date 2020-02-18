@@ -1,0 +1,16 @@
+Port values for the moter controllers and soleniods is found here.
+
+Motor Controllers (PWM):
+    Drive Train: Left - 9, Right - 0
+    Ball Intake: 1
+    Ball Launcher: Left - 3, Right - 2
+    Wheel Arm: 8
+
+Sensors:
+    Color Sensor: Onboard I2C Port
+    Ultrasonic Sensor: Analogue In 1
+
+Pneumatics:
+    Compressor: PCM CAN Device ID 0
+    Gear Shifter: PCM Channel 0
+    Arm Piston: Forward - PCM Channel 1, Reverse - PCM Channel 2
