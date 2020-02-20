@@ -86,10 +86,22 @@ private DifferentialDrive differentialDrive;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     
+    // Drive function
     public void drive(Joystick xboxController) {
+        //Get raw X and Y values from Left Joystick on Controller 1
         double getX = xboxController.getX(Hand.kLeft);
         double getY = xboxController.getY(Hand.kLeft);
 
+        //Deadband to account for joystick being offset in neutral
+        if(Math.abs(getX) < 0.05) {
+            getX = 0;
+        }
+
+        if(Math.abs(getY) < 0.05) {
+            getY = 0;
+        }
+
+        //Drive the bot using the values
         differentialDrive.arcadeDrive(-getY, getX);
     }
 }
