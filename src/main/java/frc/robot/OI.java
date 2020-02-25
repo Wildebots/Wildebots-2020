@@ -14,6 +14,7 @@ package frc.robot;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.buttons.*;
 import frc.robot.subsystems.*;
 
@@ -85,9 +86,9 @@ public class OI {
         xbox1 = new Joystick(0);
 
         rightTrigger = new JoystickButton(xbox1, 6);
-        rightTrigger.whileHeld(new ShiftGear());
+        rightTrigger.whileHeld(new ShiftGear(Value.kReverse));
         leftTrigger = new JoystickButton(xbox1, 5);
-        leftTrigger.whileHeld(new ShiftGear());
+        leftTrigger.whileHeld(new ShiftGear(Value.kForward));
 
 
         // SmartDashboard Buttons
