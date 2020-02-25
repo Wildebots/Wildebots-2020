@@ -65,7 +65,7 @@ public class SensorSystem extends Subsystem {
 
     public void detectColor() {
         Color detected = cSensor.getColor();
-        String value = ("(" + String.valueOf(cSensor.getRed()) + ", " + String.valueOf(cSensor.getGreen()) + ", " + String.valueOf(cSensor.getBlue()) + ")");
+        //String value = ("(" + String.valueOf(cSensor.getRed()) + ", " + String.valueOf(cSensor.getGreen()) + ", " + String.valueOf(cSensor.getBlue()) + ")");
         ColorMatchResult match = matcher.matchClosestColor(detected);
         detect = match.color;
         String color = colorString(match);
