@@ -11,7 +11,6 @@
 package frc.robot.subsystems;
 
 import frc.robot.commands.*;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
@@ -69,7 +68,7 @@ public class DriveTrain extends Subsystem {
 
         encoderL = new Encoder(0, 1);
         encoderL.setDistancePerPulse(1./256.);
-        encoderR = new Encoder(1, 2);
+        encoderR = new Encoder(2, 3);
         encoderR.setDistancePerPulse(1./256.);
     }
 
@@ -114,7 +113,7 @@ public class DriveTrain extends Subsystem {
             getY = 0;
         }
 
-        if(getX == 0) {
+        if(getX == 0 && getY != 0) {
             //Heading error
             double error = encoderL.getDistance() - encoderR.getDistance();
 
@@ -126,4 +125,3 @@ public class DriveTrain extends Subsystem {
         differentialDrive.arcadeDrive(-getY, getX);
     }
 }
-
