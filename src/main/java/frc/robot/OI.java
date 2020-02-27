@@ -76,13 +76,13 @@ public class OI {
         triggerL = new JoystickButton(xbox2, 5);
         triggerL.whileHeld(new LaunchBall(-0.5));
         y = new JoystickButton(xbox2, 4);
-        y.whileHeld(new MoveArm());
+        y.whenPressed(new MoveArm());
         x = new JoystickButton(xbox2, 3);
-        x.whileHeld(new MoveArm());
+        x.whenPressed(new MoveArm());
         b = new JoystickButton(xbox2, 2);
-        b.whileHeld(new MoveArm());
+        b.whenPressed(new MoveArm());
         a = new JoystickButton(xbox2, 1);
-        a.whileHeld(new MoveArm());
+        a.whenPressed(new MoveArm());
         xbox1 = new Joystick(0);
 
         rightTrigger = new JoystickButton(xbox1, 6);
