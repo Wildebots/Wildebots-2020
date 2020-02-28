@@ -13,7 +13,7 @@ Sensors:
 Encoders (DIO):
     Drive Train: Left - Channels 0 and 1, Right - Channels 2 and 3
 
-Pneumatics:
+Pneumatics: 
     Compressor: PCM CAN Device ID 0
     Gear Shifter: Forward - PCM Channel 0, Reverse - PCM Channel 1
     Arm Piston: Forward - PCM Channel 2, Reverse - PCM Channel 3

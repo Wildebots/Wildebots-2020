@@ -71,5 +71,21 @@ public class WheelArm extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
+    public void setMotor(double x) {
+        armMotor.set(x);
+    }
+
+    public void endMotor() {
+        armMotor.set(0.0);
+        armMotor.stopMotor();
+    }
+
+    public void rotations(){
+
+    }
+
+    public void turnColour(String colour) {
+
+    }
 }
 
