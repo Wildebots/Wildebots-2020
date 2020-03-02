@@ -17,10 +17,10 @@ public class SensorSystem extends Subsystem {
 
     private final AnalogInput ultrasonic = new AnalogInput(Robot.UltrasonicPort); //
 
-    private final Color Blue = ColorMatch.makeColor(0.143, 0.427, 0.429);
-    private final Color Green = ColorMatch.makeColor(0.197, 0.561, 0.240);
-    private final Color Red = ColorMatch.makeColor(0.561, 0.232, 0.114);
-    private final Color Yellow = ColorMatch.makeColor(0.361, 0.524, 0.113);
+    private final Color Blue = ColorMatch.makeColor(0.170, 0.444, 0.386);
+    private final Color Green = ColorMatch.makeColor(0.210, 0.530, 0.260);
+    private final Color Red = ColorMatch.makeColor(0.387, 0.406, 0.201);
+    private final Color Yellow = ColorMatch.makeColor(0.230, 0.511, 0.191);
 
     private static final double ValueToInches = 0.125;
 
@@ -69,6 +69,9 @@ public class SensorSystem extends Subsystem {
         detect = match.color;
         String color = colorString(match);
         SmartDashboard.putString("Colour", color);
+        SmartDashboard.putNumber("Red", detected.red);
+        SmartDashboard.putNumber("Green", detected.green);
+        SmartDashboard.putNumber("Blue", detected.blue);
     }
 
     public void getDistance() {
