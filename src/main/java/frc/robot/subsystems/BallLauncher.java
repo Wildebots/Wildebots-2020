@@ -81,7 +81,7 @@ public class BallLauncher extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-
+    
     public void Intake(Joystick xboxController) {
         double getY = xboxController.getY(Hand.kLeft);
         intakeMotor.set(getY);
