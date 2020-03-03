@@ -1,0 +1,33 @@
+Port values for electronics, controls, and whatever else that is needed will be found here
+
+Ports:
+    Motor Controllers (PWM):
+        Drive Train: Left - 9, Right - 0
+        Ball Intake: 1
+        Ball Launcher: Left - 3, Right - 2
+        Wheel Arm: 8
+
+    Sensors:
+        Color Sensor: Onboard I2C Port
+        Ultrasonic Sensor: Analogue In 1
+
+    Encoders (DIO):
+        Drive Train: Left - Channels 0 and 1, Right - Channels 2 and 3
+
+    Pneumatics: 
+        Compressor: PCM CAN Device ID 0
+        Gear Shifter: Forward - PCM Channel 0, Reverse - PCM Channel 1
+        Arm Piston: Forward - PCM Channel 2, Reverse - PCM Channel 3
+
+Controls:
+    Xbox Controller 1:
+        Left Stick - Drive
+        A, B, X, Y buttons - Color to turn to in Stage 3 (Button color coresponds to the color that is required in the match)
+        Left and Right bumpers - Gear Shifting (Left is low gear, Right is high gear)
+    
+    Xbox Controller 2:
+        Left Stick - Ball Intake
+        Right Stick - Turn Color Wheel (Manually)
+        A, B, X, Y Buttons - Change Launch Speed [Currently a - 25%, b - 50%, x - 75%, y - 100%]
+        Left and Right bumpers - Launch Ball (Right is Forward)
+        Back - Move Piston on arm

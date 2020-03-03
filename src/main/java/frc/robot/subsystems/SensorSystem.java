@@ -24,7 +24,7 @@ public class SensorSystem extends Subsystem {
 
     private static final double ValueToInches = 0.125;
 
-    private Color detect;
+    public String colorDetect;
 
     public SensorSystem() {
         cSensor = new ColorSensorV3(Robot.i2cport);
@@ -66,17 +66,18 @@ public class SensorSystem extends Subsystem {
     public void detectColor() {
         Color detected = cSensor.getColor();
         ColorMatchResult match = matcher.matchClosestColor(detected);
-        detect = match.color;
         String color = colorString(match);
+        colorDetect = color;
         SmartDashboard.putString("Colour", color);
-        SmartDashboard.putNumber("Red", detected.red);
+     /* SmartDashboard.putNumber("Red", detected.red);
         SmartDashboard.putNumber("Green", detected.green);
-        SmartDashboard.putNumber("Blue", detected.blue);
+        SmartDashboard.putNumber("Blue", detected.blue); */
     }
 
     public void getDistance() {
-        double distance = ultrasonic.getValue() * ValueToInches;
-        System.out.println(distance);
+        double dist = ultrasonic.getValue() * ValueToInches;
+        String distance = dist + " inches";
+        SmartDashboard.putString("Distance", distance);
     }
 
 }

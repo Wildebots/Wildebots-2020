@@ -118,7 +118,7 @@ public class DriveTrain extends Subsystem {
         //Heading error
         double error = encoderL.getDistance() - encoderR.getDistance();
         
-        if(Math.abs(getX) < 0.1 && getY != 0) {
+        if(Math.abs(getX) == 0 && getY != 0) {
 
             differentialDrive.tankDrive(getY + kP * error, getY - kP * error);
 
@@ -129,8 +129,5 @@ public class DriveTrain extends Subsystem {
 
         //Drive the bot using the values
         differentialDrive.arcadeDrive(-getY, getX);
-        SmartDashboard.putNumber("Left Encoder", encoderL.getDistance());
-        SmartDashboard.putNumber("Right Encoder", encoderR.getDistance());
-        SmartDashboard.putNumber("Heading Error", error);
     }
 }
