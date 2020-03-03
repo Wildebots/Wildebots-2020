@@ -59,6 +59,7 @@ public class OI {
     public JoystickButton y1;
     public JoystickButton leftTrigger;
     public JoystickButton rightTrigger;
+    public JoystickButton the;
     public Joystick xbox1;
 
     public JoystickButton a2;
@@ -90,6 +91,9 @@ public class OI {
         b1.whenPressed(new TurnColour("Red"));
         a1 = new JoystickButton(xbox1, 1);
         a1.whenPressed(new TurnColour("Green"));
+
+        the = new JoystickButton(xbox1, 7);
+        the.whenPressed(new ShiftGear(Value.kOff));
 
         xbox2 = new Joystick(1);
         triggerR = new JoystickButton(xbox2, 6);

@@ -108,11 +108,23 @@ public class DriveTrain extends Subsystem {
         double rightMD = encoderR.getDistance(); //right motor distance
         double averageDistance = (leftMD+rightMD)/2; //average of the 2
 
-        if (averageDistance <= 117)
+        if (averageDistance <= 140)
             differentialDrive.arcadeDrive(0.5, 0.0);
         else
             differentialDrive.arcadeDrive(0.0, 0.0);
 
+    }
+
+    public void setDrive(double x) {
+        leftMotor.set(x);
+        rightMotor.set(x);
+    }
+
+    public void endDrive() {
+        leftMotor.set(0.0); // Set the speed to zero first
+        leftMotor.stopMotor(); // Stop the motor (Deconstructor)
+        rightMotor.set(0.0); // Set the speed to zero first
+        rightMotor.stopMotor(); // Stop the motor (Deconstructor)       
     }
     
     public void drive(Joystick xboxController) {
