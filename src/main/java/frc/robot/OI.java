@@ -59,7 +59,6 @@ public class OI {
     public JoystickButton y1;
     public JoystickButton leftTrigger;
     public JoystickButton rightTrigger;
-    public JoystickButton the;
     public Joystick xbox1;
 
     public JoystickButton a2;
@@ -79,9 +78,9 @@ public class OI {
 
         xbox1 = new Joystick(0);
         rightTrigger = new JoystickButton(xbox1, 6);
-        rightTrigger.whenPressed(new ShiftGear(Value.kForward));
+        rightTrigger.whileHeld(new ShiftGear(Value.kForward));
         leftTrigger = new JoystickButton(xbox1, 5);
-        leftTrigger.whenPressed(new ShiftGear(Value.kReverse));
+        leftTrigger.whileHeld(new ShiftGear(Value.kReverse));
 
         y1 = new JoystickButton(xbox1, 4);
         y1.whenPressed(new TurnColour("Yellow"));
@@ -91,9 +90,6 @@ public class OI {
         b1.whenPressed(new TurnColour("Red"));
         a1 = new JoystickButton(xbox1, 1);
         a1.whenPressed(new TurnColour("Green"));
-
-        the = new JoystickButton(xbox1, 7);
-        the.whenPressed(new ShiftGear(Value.kOff));
 
         xbox2 = new Joystick(1);
         triggerR = new JoystickButton(xbox2, 6);
@@ -114,9 +110,9 @@ public class OI {
         y2.whenPressed(new LaunchBall(4));
 
         back = new JoystickButton(xbox2, 7);
-        back.whenPressed(new MoveArmPiston(Value.kReverse));
+        back.whileHeld(new MoveArmPiston(Value.kReverse));
         start = new JoystickButton(xbox2, 8);
-        start.whenPressed(new MoveArmPiston(Value.kForward));
+        start.whileHeld(new MoveArmPiston(Value.kForward));
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
