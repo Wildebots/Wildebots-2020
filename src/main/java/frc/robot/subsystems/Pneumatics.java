@@ -99,5 +99,9 @@ public class Pneumatics extends Subsystem {
     public void endPiston() {
         dSolenoid2.set(Value.kOff);
     }
+
+    public void turnOff() {
+        compressor.stop();
+    }
 }
 

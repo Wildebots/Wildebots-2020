@@ -24,10 +24,11 @@ Controls:
         Left Stick - Drive
         A, B, X, Y buttons - Color to turn to in Stage 3 (Button color coresponds to the color that is required in the match)
         Left and Right bumpers - Gear Shifting (Left is low gear, Right is high gear)
+        Start - Turn off Compressor
     
     Xbox Controller 2:
         Left Stick - Ball Intake
         Right Stick - Turn Color Wheel (Manually)
         A, B, X, Y Buttons - Change Launch Speed [Currently a - 25%, b - 50%, x - 75%, y - 100%]
-        Left and Right bumpers - Launch Ball (Right is Forward)
-        Back - Move Piston on arm
+        Left and Right bumpers - Launch Ball
+        Back and Start - Move Piston on arm
