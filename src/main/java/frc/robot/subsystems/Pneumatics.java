@@ -83,8 +83,6 @@ public class Pneumatics extends Subsystem {
     // here. Call these from Commands.
     public void shiftGears(Value state){
         dSolenoid1.set(state);
-        
-        dSolenoid1.set(Value.kOff);
     }
 
     public void endShifter() {
@@ -93,7 +91,6 @@ public class Pneumatics extends Subsystem {
 
     public void movePiston(Value state){
         dSolenoid2.set(state);
-        dSolenoid2.set(Value.kOff);
     }
 
     public void endPiston() {
