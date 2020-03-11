@@ -32,3 +32,9 @@ Controls:
         A, B, X, Y Buttons - Change Launch Speed [Currently a - 25%, b - 50%, x - 75%, y - 100%]
         Left and Right bumpers - Launch Ball
         Back and Start - Move Piston on arm
+
+Required Distances to shoot at each speed (± 0.05m):
+    100% - 1.80m
+    83% - 2.17m
+    66% - 2.72m
+    50% - 3.60m

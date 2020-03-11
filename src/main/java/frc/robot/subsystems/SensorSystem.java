@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import frc.robot.Robot;
+import frc.robot.commands.LaunchBall;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -22,7 +23,7 @@ public class SensorSystem extends Subsystem {
     private final Color Red = ColorMatch.makeColor(0.387, 0.406, 0.201);
     private final Color Yellow = ColorMatch.makeColor(0.230, 0.511, 0.191);
 
-    private static final double ValueToInches = 0.125;
+    private static final double ValueToMeters = 0.003175;
 
     public String colorDetect;
 
@@ -75,8 +76,8 @@ public class SensorSystem extends Subsystem {
     }
 
     public void getDistance() {
-        double dist = ultrasonic.getValue() * ValueToInches;
-        String distance = dist + " inches";
+        double dist = ultrasonic.getValue() * ValueToMeters;
+        String distance = dist + " m";
         SmartDashboard.putString("Distance", distance);
     }
 
