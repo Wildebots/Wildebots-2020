@@ -85,6 +85,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putData("Auto mode", chooser);
 
         CameraServer.getInstance().startAutomaticCapture("Camera 1", 0);
+        CameraServer.getInstance().startAutomaticCapture("Camera 2", 1);
         pneumatics.shiftGears(Value.kForward);
     }
 
@@ -131,8 +132,6 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void teleopPeriodic() {
-        sensors.detectColor();
-        sensors.getDistance();
         Scheduler.getInstance().run();
     }
 }

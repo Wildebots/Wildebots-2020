@@ -70,9 +70,6 @@ public class SensorSystem extends Subsystem {
         String color = colorString(match);
         colorDetect = color;
         SmartDashboard.putString("Colour", color);
-     /* SmartDashboard.putNumber("Red", detected.red);
-        SmartDashboard.putNumber("Green", detected.green);
-        SmartDashboard.putNumber("Blue", detected.blue); */
     }
 
     public void getDistance() {

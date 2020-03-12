@@ -4,6 +4,7 @@ import frc.robot.Robot;
 
 public class CompressorOff extends Command {
     public CompressorOff() {
+        requires(Robot.pneumatics);
     }
 
     // Called just before this Command runs the first time

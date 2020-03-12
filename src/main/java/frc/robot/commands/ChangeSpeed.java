@@ -1,15 +1,11 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
-public class TurnColour extends Command {
-    private String rColour;
-    public TurnColour() {
-        requires(Robot.wheelArm);
-    }
-
-    public TurnColour(String color) {
-        rColour = color;
+public class ChangeSpeed extends Command {
+    
+    public ChangeSpeed() {
     }
 
     // Called just before this Command runs the first time
@@ -20,7 +16,17 @@ public class TurnColour extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.wheelArm.turnColour(rColour);
+        int pov = Robot.oi.getXbox2().getPOV();
+        SmartDashboard.putNumber("D-Pad", pov);
+
+        switch(pov) {
+            case 0:
+                Robot.ballLauncher.changeSpeed(0.25);
+            case 180:
+                Robot.ballLauncher.changeSpeed(-0.25);
+            default:
+                Robot.ballLauncher.changeSpeed(0.0);
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()

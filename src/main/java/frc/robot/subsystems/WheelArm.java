@@ -72,8 +72,8 @@ public class WheelArm extends Subsystem {
     // here. Call these from Commands.
 
     public void rotations(Joystick xboxController) {
-        double getY = xboxController.getY(Hand.kRight);
-        armMotor.set(getY);
+        //double getY = xboxController.getY(Hand.kRight);
+        //armMotor.set(getY);
     }
 
     public void turnColour(String colour) {

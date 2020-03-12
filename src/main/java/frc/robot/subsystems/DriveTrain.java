@@ -141,11 +141,11 @@ public class DriveTrain extends Subsystem {
             getY = 0;
         }
 
-        //Heading error
-        double error = encoderL.getDistance() - encoderR.getDistance();
         
         if(Math.abs(getX) == 0 && getY != 0) {
-
+            //Heading error
+            double error = encoderL.getDistance() - encoderR.getDistance();
+        
             differentialDrive.tankDrive(getY + kP * error, getY - kP * error);
 
             SmartDashboard.putNumber("Left Encoder", encoderL.getDistance());
