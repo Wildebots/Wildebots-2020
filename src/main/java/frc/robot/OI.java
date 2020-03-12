@@ -59,6 +59,8 @@ public class OI {
     public Joystick xbox1;
 
     public JoystickButton triggerL;
+    public JoystickButton triggerR;
+    public JoystickButton a;
     public JoystickButton back;
     public JoystickButton start2;
     public Joystick xbox2;
@@ -79,7 +81,12 @@ public class OI {
 
         xbox2 = new Joystick(1);
         triggerL = new JoystickButton(xbox2, 5);
-        triggerL.whileHeld(new LaunchBall());
+        triggerL.whileHeld(new BallIntake(-0.75));
+        triggerR = new JoystickButton(xbox2, 6);
+        triggerR.whileHeld(new LaunchBall());
+
+        a = new JoystickButton(xbox2, 1);
+        a.whileHeld(new BallIntake(0.75));
      
         back = new JoystickButton(xbox2, 7);
         back.whileHeld(new MoveArmPiston(Value.kReverse));
